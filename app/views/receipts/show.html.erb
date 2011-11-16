@@ -22,4 +22,23 @@
 
 
 <%= link_to 'Edit', edit_receipt_path(@receipt) %> |
-<%= link_to 'Back', receipts_path %>
+<%= link_to 'Back', receipts_url %>
+
+<%= button_to "Get claimID",
+              'http://www.dailygobble.com/test/reward/reward_user_uploadreceipt.php?activated=userid=4:selofferid=15:selchainName=404'%>
+
+<br>
+
+<%= form_tag('http://localhost:3000/receipts/') do %>
+
+<div class="field">
+    <label for="selclamid">User</label><br />
+    <input id="selclamid" size="30" type="number" /></div>
+<div class="field">
+    <label for="imageName">Image name</label><br />
+    <input id="imageName" size="30" type="text" /></div>
+<div class="actions">
+    <%= button_tag "UPLOAD" %>
+</div>
+
+<% end %>
